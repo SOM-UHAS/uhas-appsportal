@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/image/uhas.ico" />
+    <title>UHAS Applications Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="global.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="brand">
+        <img src="images/logo-uhas.png" alt="UHAS logo" />
+        <h2>University of Health and Allied Sciences</h2>
+      </div>
+      <button
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="mainNav">
+        <a
+          href="https://uhas.edu.gh/uhas/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Main Website
+          <svg
+            class="external-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            ></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+        <div
+          class="theme-toggle"
+          id="themeToggle"
+          role="button"
+          aria-label="Toggle light or dark mode"
+        >
+          <span id="lightLabel" class="active">Light</span>
+          <span id="darkLabel">Dark</span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+      <img src="images/banner.jpg" alt="UHAS Banner" class="banner-image" />
+    </section>
+
+    <main>
+      <div class="page-title">
+        <h1>UHAS Applications Portal</h1>
+        <p>Unified access to university digital services</p>
+      </div>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search applications…"
+          onkeyup="filterApps()"
+        />
+      </div>
+
+      <!-- STUDENTS -->
+      <div class="category-title">
+        <span class="pill">Students</span>
+        <span class="rule"></span>
+      </div>
+      <div class="apps-grid">
+        <div
+          class="app-card"
+          data-name="lms"
+          data-url="https://elearning.uhas.edu.gh/"
+          onclick="openModal('LMS','Online Learning Management System.','https://cdn-icons-png.flaticon.com/512/3135/3135715.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt=""
+          />
+          <h3>LMS</h3>
+          <p>Learning Platform</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="sois students"
+          data-url="https://students.uhas.edu.gh/"
+          onclick="openModal('SOIS (Students)','Register course, access your examination results right here.','https://cdn-icons-png.flaticon.com/512/3135/3135715.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt=""
+          />
+          <h3>Student Online Information System (SOIS)</h3>
+          <p>Student Portal</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="dissertation tracker"
+          data-url="https://agbalenyo.uhas.edu.gh/"
+          onclick="openModal('Dissertation Tracker','Online thesis submission portal.','https://cdn-icons-png.flaticon.com/512/2436/2436874.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2436/2436874.png"
+            alt=""
+          />
+          <h3>Dissertation Tracker</h3>
+          <p>Thesis Portal</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="medical examination system"
+          data-url="https://mes.uhas.edu.gh/"
+          onclick="openModal('SMES','UHAS student medical examination system.','https://cdn-icons-png.flaticon.com/512/4320/4320337.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+            alt=""
+          />
+          <h3>SMES</h3>
+          <p>Medical Examination</p>
+        </div>
+      </div>
+
+      <!-- STAFF -->
+      <div class="category-title">
+        <span class="pill">Staff</span>
+        <span class="rule"></span>
+      </div>
+      <div class="apps-grid">
+        <div
+          class="app-card"
+          data-name="payslip"
+          data-url="https://gogepayservices.com/"
+          onclick="openModal('GOG Payslip','Monthly payslip access.','https://cdn-icons-png.flaticon.com/512/3135/3135673.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135673.png"
+            alt=""
+          />
+          <h3>GOG Payslip</h3>
+          <p>Salary Statements</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="uhaspvs"
+          data-url="https://uhaspvs.uhas.edu.gh"
+          onclick="openModal('UHASPVS','UHAS Staff validation portal.','https://cdn-icons-png.flaticon.com/512/190/190411.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+            alt=""
+          />
+          <h3>UHASPVS</h3>
+          <p>Staff Validation</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="staff self service"
+          data-url="https://erp.uhas.edu.gh/staffportal"
+          onclick="openModal('Staff Self Service','Staff HR services.','https://cdn-icons-png.flaticon.com/512/942/942748.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/942/942748.png"
+            alt=""
+          />
+          <h3>Staff Self Service</h3>
+          <p>Employee Services</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="hr admin portal"
+          data-url="https://erp.uhas.edu.gh/hr"
+          onclick="openModal('HR Admin Portal','HR administration & management.','https://cdn-icons-png.flaticon.com/512/2920/2920277.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png"
+            alt=""
+          />
+          <h3>HR Admin Portal</h3>
+          <p>HR Management</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="limbs itam"
+          data-url="https://itamlims.uhas.edu.gh"
+          onclick="openModal('LIMS (ITAM)','ITAM Laboratory Management System.','https://cdn-icons-png.flaticon.com/512/4712/4712109.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+            alt=""
+          />
+          <h3>LIMS (ITAM)</h3>
+          <p>Laboratory Information</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="smart workplace"
+          data-url="https://uhasedughana.sharepoint.com/sites/swpuhas"
+          onclick="openModal('Smart Workplace','Collaboration & workflow platform.','https://cdn-icons-png.flaticon.com/512/1157/1157109.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1157/1157109.png"
+            alt=""
+          />
+          <h3>Smart Workplace <span class="shared-badge">Shared</span></h3>
+          <p>Productivity Tools</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="provident fund"
+          data-url="https://apps.uhas.edu.gh/pf/"
+          onclick="openModal('Provident Fund','Provident Fund membership information.','https://cdn-icons-png.flaticon.com/512/3050/3050525.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png"
+            alt=""
+          />
+          <h3>Provident Fund</h3>
+          <p>PF Information</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="help desk"
+          data-url="#"
+          onclick="openModal('Help Desk','Looking for support? The team is on stand-by to give you quick assistance.','https://cdn-icons-png.flaticon.com/512/942/942799.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/942/942799.png"
+            alt=""
+          />
+          <h3>Help Desk</h3>
+          <p>Get Help</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="research grant"
+          data-url="https://apps.uhas.edu.gh/grant/"
+          onclick="openModal('Research Grants','Need funds to support your research and scientific proposals? Apply here.','https://cdn-icons-png.flaticon.com/512/1670/1670875.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1670/1670875.png"
+            alt=""
+          />
+          <h3>Research Grants</h3>
+          <p>Get Help</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="institutional repository"
+          data-url="https://uhasspace.uhas.edu.gh/search"
+          onclick="openModal('Repository','Access hundreds of speeches, thesis, dissertations, papers and many more.','https://cdn-icons-png.flaticon.com/512/4149/4149653.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4149/4149653.png"
+            alt=""
+          />
+          <h3>Repository</h3>
+          <p>Study Archive</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="medical examination system"
+          data-url="https://mes.uhas.edu.gh/"
+          onclick="openModal('MES','UHAS medical examination system.','https://cdn-icons-png.flaticon.com/512/4320/4320337.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png"
+            alt=""
+          />
+          <h3>MES</h3>
+          <p>Medical Examination</p>
+        </div>
+
+        <div
+          class="app-card"
+          data-name="sois staff"
+          data-url="https://app.uhas.edu.gh/sois/"
+          onclick="openModal('SOIS (Staff)','Staff SOIS portal.','https://cdn-icons-png.flaticon.com/512/3135/3135715.png',this.dataset.url)"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt=""
+          />
+          <h3>SOIS (Staff)</h3>
+          <p>SOIS</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img id="modalImg" alt="" />
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <div class="modal-buttons">
+          <button class="continue" onclick="continueApp()">Continue</button>
+          <button class="cancel" onclick="closeModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-container">
+          <div class="footer-box">
+            <h4>About UHAS</h4>
+            <p>University of Health and Allied Sciences</p>
+            <p>Ho, Volta Region, Ghana</p>
+          </div>
+
+          <div class="footer-box">
+            <h4>Quick Links</h4>
+            <a href="https://uhas.edu.gh/uhas/">Main Website</a>
+            <a href="#">Admissions</a>
+          </div>
+
+          <div class="footer-box">
+            <h4>Contact</h4>
+            <p>Email: info@uhas.edu.gh</p>
+            <p>Phone: +233 (0) 362 196 122</p>
+          </div>
+
+          <div class="footer-box">
+            <h4>Portal Info</h4>
+            <p>Unified Digital Access Platform</p>
+            <p>Secure • Centralized • Efficient</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 University of Health and Allied Sciences (UHAS). All rights
+        reserved.
+      </div>
+    </footer>
+
+    <script>
+      let pendingUrl = null
+
+      function openModal(title, desc, img, url) {
+        document.getElementById('modalTitle').textContent = title
+        document.getElementById('modalDesc').textContent = desc
+        document.getElementById('modalImg').src = img
+        pendingUrl = url
+        const modal = document.getElementById('modal')
+        modal.style.display = 'flex'
+        setTimeout(() => modal.classList.add('show'), 10)
+      }
+      function closeModal() {
+        const modal = document.getElementById('modal')
+        modal.classList.remove('show')
+        setTimeout(() => (modal.style.display = 'none'), 300)
+        pendingUrl = null
+      }
+      function continueApp() {
+        if (pendingUrl && pendingUrl !== '#') {
+          window.open(pendingUrl, '_blank')
+        }
+        closeModal()
+      }
+      function filterApps() {
+        const q = document.getElementById('search').value.toLowerCase()
+        document.querySelectorAll('.app-card').forEach(card => {
+          const name = card.dataset.name.toLowerCase()
+          card.style.display = name.includes(q) ? '' : 'none'
+        })
+      }
+
+      /* THEME TOGGLE — persistent with localStorage, defaults to light */
+      const root = document.documentElement
+      const lightLabel = document.getElementById('lightLabel')
+      const darkLabel = document.getElementById('darkLabel')
+
+      function setTheme(mode) {
+        root.setAttribute('data-theme', mode)
+        lightLabel.classList.toggle('active', mode === 'light')
+        darkLabel.classList.toggle('active', mode === 'dark')
+        localStorage.setItem('theme', mode)
+      }
+
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'light'
+        setTheme(current === 'light' ? 'dark' : 'light')
+      })
+
+      // Load saved theme or default to light for first-time users
+      const savedTheme = localStorage.getItem('theme') || 'light'
+      setTheme(savedTheme)
+
+      /* MOBILE MENU TOGGLE */
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle')
+      const mainNav = document.getElementById('mainNav')
+
+      mobileMenuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active')
+        mobileMenuToggle.classList.toggle('active')
+      })
+
+      // Close menu when clicking outside
+      document.addEventListener('click', e => {
+        if (
+          !mobileMenuToggle.contains(e.target) &&
+          !mainNav.contains(e.target)
+        ) {
+          mainNav.classList.remove('active')
+          mobileMenuToggle.classList.remove('active')
+        }
+      })
+
+      /* STICKY HEADER ON SCROLL */
+      const header = document.querySelector('header')
+      let lastScroll = 0
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset
+
+        if (currentScroll > 80) {
+          header.classList.add('scrolled')
+        } else {
+          header.classList.remove('scrolled')
+        }
+
+        lastScroll = currentScroll
+      })
+    </script>
+  </body>
+</html>
