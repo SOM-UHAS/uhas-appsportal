@@ -726,6 +726,25 @@ html[data-theme="dark"] .app-card h3 {
   box-shadow: 0 0 8px var(--green);
 }
 
+/* AD BANNER */
+.ad-banner {
+  background: var(--paper);
+  padding: 40px 20px;
+  margin: 60px 0 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.ad-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* FOOTER */
 .footer-top {
   background: var(--paper);
